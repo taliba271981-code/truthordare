@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101027">
+<title>Max Truth or Dare for Pros</title>
+<style>
+:root{--bg:#0b1020;--panel:#151b32;--panel2:#1d2543;--ink:#f7f8ff;--muted:#aab3d1;--pink:#ff4fa3;--cyan:#5de4ff;--lime:#c8ff6b;--line:#313b60}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(circle at 15% 0%,#30205b 0,transparent 34%),radial-gradient(circle at 100% 20%,#123c59 0,transparent 30%),var(--bg);min-height:100vh}
+button,input,select{font:inherit}button{cursor:pointer;border:0;font-weight:800;transition:transform .15s,filter .15s}button:hover{filter:brightness(1.08);transform:translateY(-1px)}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.wrap{max-width:1100px;margin:auto;padding:24px 18px 40px}.top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:36px}.brand{display:flex;align-items:center;gap:11px;font-weight:950;letter-spacing:-.5px}.logo{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--pink),#845dff);font-size:22px;box-shadow:0 8px 24px #ff4fa344}.pill{border:1px solid #ffffff24;color:var(--muted);padding:8px 12px;border-radius:99px;font-size:12px;font-weight:800;letter-spacing:.7px}
+.hero{text-align:center;margin:0 auto 30px;max-width:760px}.eyebrow{color:var(--cyan);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(2.4rem,7vw,5.2rem);line-height:.98;letter-spacing:-3px;margin:14px 0 16px}.hero h1 span{background:linear-gradient(90deg,var(--pink),#b58cff,var(--cyan));background-clip:text;-webkit-background-clip:text;color:transparent}.hero p{color:var(--muted);font-size:clamp(1rem,2.3vw,1.15rem);line-height:1.6;margin:0 auto;max-width:600px}
+.layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:18px;align-items:stretch}.panel{background:linear-gradient(160deg,#1a2140eF,#11172ceF);border:1px solid #ffffff14;border-radius:24px;padding:22px;box-shadow:0 20px 70px #0003}.panel h2{font-size:15px;margin:0 0 18px;letter-spacing:.3px}.field{display:block;color:var(--muted);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin:18px 0 8px}input,select{width:100%;background:#0d1328;border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:12px 13px;min-height:46px}.modes{display:grid;grid-template-columns:1fr 1fr;gap:8px}.mode{padding:12px;border-radius:12px;background:#202846;color:var(--muted);border:1px solid transparent}.mode.active{background:#382448;color:white;border-color:var(--pink);box-shadow:inset 0 0 0 1px #ff4fa344}.mode small{display:block;font-size:11px;font-weight:600;margin-top:4px;opacity:.8}.checkrow{display:flex;gap:9px;align-items:flex-start;color:var(--muted);font-size:13px;line-height:1.4;margin-top:16px}.checkrow input{width:17px;min-height:17px;margin:0;accent-color:var(--pink)}.start{width:100%;margin-top:20px;background:linear-gradient(100deg,var(--pink),#985eff);color:white;border-radius:13px;padding:14px;box-shadow:0 10px 25px #a83fba33}.game{display:flex;flex-direction:column;min-height:480px}.gamehead{display:flex;justify-content:space-between;align-items:center;gap:12px}.round{color:var(--muted);font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase}.score{font-size:12px;color:var(--lime);font-weight:900}.cardstage{display:grid;place-items:center;flex:1;padding:28px 0}.challenge{width:100%;max-width:530px;min-height:275px;border-radius:24px;padding:28px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:radial-gradient(circle at 50% 0%,#3b2b67,#202745 65%);border:1px solid #ffffff24;position:relative;overflow:hidden}.challenge:before{content:"";position:absolute;width:240px;height:240px;border-radius:50%;border:1px solid #ffffff12;top:-145px;right:-75px}.kind{font-size:12px;letter-spacing:2px;font-weight:950;color:var(--cyan);text-transform:uppercase}.challenge h3{font-size:clamp(1.45rem,3.5vw,2.15rem);line-height:1.25;letter-spacing:-.8px;margin:20px 0;max-width:440px}.hint{color:var(--muted);font-size:13px;line-height:1.5;max-width:390px}.actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}.action{padding:13px 17px;border-radius:12px;background:#2b3455;color:var(--ink)}.action.primary{background:var(--lime);color:#13192a;min-width:140px}.action.pass{background:transparent;border:1px solid #495274;color:var(--muted)}.bottomnote{font-size:12px;color:var(--muted);line-height:1.6;text-align:center;margin:22px auto 0;max-width:780px}.rules{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-top:15px}.rules span{font-size:11px;color:#c8d0eb;border:1px solid #ffffff16;background:#ffffff08;padding:7px 10px;border-radius:99px}.toast{min-height:20px;color:var(--lime);text-align:center;font-size:12px;margin-top:10px}.footer{border-top:1px solid #ffffff14;margin-top:32px;padding-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#8f9abd;font-size:12px}.footer a{color:var(--cyan);text-decoration:none}.hidden{display:none!important}
+@media(max-width:780px){.layout{grid-template-columns:1fr}.top{margin-bottom:28px}.game{min-height:430px}.hero h1{letter-spacing:-1.8px}.panel{padding:18px}.cardstage{padding:22px 0}.challenge{min-height:255px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><div class="logo">✦</div><div>MAX <span style="color:var(--cyan)">GAMES</span></div></div>
+    <div class="pill">FRIEND GROUP EDITION</div>
+  </header>
+  <section class="hero">
+    <div class="eyebrow">Your group. Your rules. Big laughs.</div>
+    <h1>MAX TRUTH OR DARE<br><span>FOR PROS</span></h1>
+    <p>The ultimate party game for bold answers, creative challenges, and unforgettable memories. Keep it fun, keep it kind, and play your way.</p>
+    <div class="rules"><span>✓ Teen-friendly</span><span>✓ Pass anytime</span><span>✓ No downloads needed</span></div>
+  </section>
+  <main class="layout">
+    <aside class="panel">
+      <h2>⚡ Set up your game</h2>
+      <label class="field" for="player">Who's up first?</label>
+      <input id="player" maxlength="24" placeholder="Enter player name" value="Player 1">
+      <label class="field">Choose your vibe</label>
+      <div class="modes" role="group" aria-label="Game mode">
+        <button class="mode active" data-mode="mix">🎲 Mix it up<small>Truth + dare</small></button>
+        <button class="mode" data-mode="truth">💬 Truth only<small>Real talk</small></button>
+        <button class="mode" data-mode="dare">🔥 Dare only<small>Creative fun</small></button>
+        <button class="mode" data-mode="chill">🌿 Chill mode<small>Easygoing</small></button>
+      </div>
+      <label class="field" for="players">Group size</label>
+      <select id="players"><option value="2">2 players</option><option value="3">3 players</option><option value="4" selected>4 players</option><option value="5">5 players</option><option value="6">6 players</option><option value="7">7 players</option><option value="8">8+ players</option></select>
+      <label class="checkrow"><input id="safe" type="checkbox" checked><span>Keep challenges friendly and safe. Anyone can skip without explaining.</span></label>
+      <button class="start" id="start">START THE GAME →</button>
+      <div class="toast" id="toast" aria-live="polite"></div>
+    </aside>
+    <section class="panel game" aria-live="polite">
+      <div class="gamehead"><div class="round" id="round">READY WHEN YOU ARE</div><div class="score" id="score">0 challenges completed</div></div>
+      <div class="cardstage">
+        <div class="challenge">
+          <div class="kind" id="kind">WELCOME, PRO</div>
+          <h3 id="prompt">Ready to make this a legendary game night?</h3>
+          <p class="hint" id="hint">Tap “Start the game” to get your first challenge. Remember: fun is the only rule that matters.</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="action primary" id="next">GET A CHALLENGE ✦</button>
+        <button class="action pass" id="skip">Pass / Skip</button>
+        <button class="action" id="copy">Copy challenge</button>
+      </div>
+    </section>
+  </main>
+  <p class="bottomnote"><strong>Play with respect:</strong> no dangerous stunts, unwanted contact, bullying, private information, or pressure to share secrets. A pass is always okay. Play offline with friends; this demo stores no personal data and has no accounts.</p>
+  <footer class="footer"><span>© 2026 MAX TRUTH OR DARE FOR PROS</span><span>Made for good vibes · <a href="#rules" id="rulesLink">Player code</a></span></footer>
+</div>
+<script>
+const prompts = {
+  truth: [
+    "What is one small thing that instantly improves your mood?",
+    "What skill would you love to master this year?",
+    "What is the funniest harmless misunderstanding you have had?",
+    "Which song can you listen to on repeat without getting bored?",
+    "What is something you are proud of but rarely mention?",
+    "If you could plan the perfect day with friends, what would you do?",
+    "What fictional character would make a great friend to you?",
+    "What is a habit you would like to build?",
+    "What is the most creative excuse you have heard for being late?",
+    "What is one compliment you still remember?",
+    "Which subject or hobby would you happily learn for fun?",
+    "What is a goal you want to achieve before the year ends?",
+    "What is a funny talent or unusual fact about you?",
+    "What is the best advice a friend has given you?",
+    "If your week had a title, what would it be?"
+  ],
+  dare: [
+    "Do your best robot dance for 15 seconds.",
+    "Speak like a sports commentator while someone takes three steps.",
+    "Invent a superhero name for the player on your left.",
+    "Try to say a tongue twister three times quickly.",
+    "Give a dramatic movie-trailer voice-over for the room.",
+    "Draw a cat in 20 seconds using your non-dominant hand.",
+    "Make up a two-line song about your favourite snack.",
+    "Do your best impression of a sleepy penguin.",
+    "Describe your shoes like you are selling them on TV.",
+    "Balance a soft object on your head for 10 seconds—only if comfortable.",
+    "Create a secret handshake with another willing player.",
+    "Tell a joke in the style of a news reporter.",
+    "Make three different animal sounds and let the group guess.",
+    "Invent a new dance move and give it a name.",
+    "Say the alphabet backwards as far as you can in 15 seconds."
+  ],
+  chill: [
+    "Truth: What is your favourite way to relax after a busy day?",
+    "Dare: Give the group a 10-second weather forecast for today.",
+    "Truth: Which snack would you bring to a movie night?",
+    "Dare: Make your best surprised face for five seconds.",
+    "Truth: What place would you like to visit someday?",
+    "Dare: Name five things that are blue in 10 seconds.",
+    "Truth: What always makes a group hangout better?",
+    "Dare: Make up a positive slogan for your group.",
+    "Truth: What is one thing you have learned recently?",
+    "Dare: Give everyone a friendly, genuine compliment."
+  ]
+};
+let mode = "mix", completed = 0, turn = 1, lastPrompt = "", activePrompt = null;
+const $ = id => document.getElementById(id);
+document.querySelectorAll(".mode").forEach(btn => btn.addEventListener("click", () => {
+  document.querySelectorAll(".mode").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active"); mode = btn.dataset.mode;
+}));
+function pick(list) {
+  let choices = list.filter(x => x !== lastPrompt);
+  if (!choices.length) choices = list;
+  return choices[Math.floor(Math.random() * choices.length)];
+}
+function getChallenge() {
+  const player = $("player").value.trim() || `Player ${turn}`;
+  let type, item;
+  if (mode === "truth") { type = "TRUTH"; item = pick(prompts.truth); }
+  else if (mode === "dare") { type = "DARE"; item = pick(prompts.dare); }
+  else if (mode === "chill") {
+    item = pick(prompts.chill); type = item.startsWith("Truth:") ? "CHILL TRUTH" : "CHILL DARE";
+    item = item.replace(/^(Truth|Dare):\s*/, "");
+  } else {
+    type = Math.random() < .5 ? "TRUTH" : "DARE";
+    item = pick(prompts[type.toLowerCase()]);
+  }
+  lastPrompt = item; activePrompt = `${player}: ${type} — ${item}`;
+  $("round").textContent = `PLAYER ${turn} · YOUR TURN`;
+  $("kind").textContent = type;
+  $("prompt").textContent = item;
+  $("hint").textContent = `${player}, your move! Answer or try the challenge—or pass, no explanation needed.`;
+  $("toast").textContent = "";
+}
+$("start").addEventListener("click", () => { completed = 0; turn = 1; $("score").textContent = "0 challenges completed"; getChallenge(); });
+$("next").addEventListener("click", () => { if (!activePrompt) { getChallenge(); return; } completed++; $("score").textContent = `${completed} challenge${completed===1?"":"s"} completed`; const count = Number($("players").value); turn = turn % count + 1; $("player").value = `Player ${turn}`; getChallenge(); });
+$("skip").addEventListener("click", () => { if (!activePrompt) { $("toast").textContent = "Choose a challenge whenever you're ready."; return; } $("toast").textContent = "Skipped—no pressure. Pick another when ready!"; activePrompt = null; $("kind").textContent = "NO PRESSURE"; $("prompt").textContent = "Pass accepted. Keep the good vibes going."; $("hint").textContent = "Nobody has to explain a pass. Tap “Get a challenge” to continue."; });
+$("copy").addEventListener("click", async () => {
+  if (!activePrompt) { $("toast").textContent = "Get a challenge first."; return; }
+  try { await navigator.clipboard.writeText(activePrompt); $("toast").textContent = "Challenge copied!"; }
+  catch(e) { $("toast").textContent = activePrompt; }
+});
+$("rulesLink").addEventListener("click", e => { e.preventDefault(); alert("PLAYER CODE\\n1. Anyone can pass at any time.\\n2. No dangerous, humiliating, sexual, or illegal challenges.\\n3. Respect privacy—never pressure anyone to reveal secrets.\\n4. Ask before involving another person.\\n5. Keep it fun and kind."); });
+</script>
+</body>
+</html>
